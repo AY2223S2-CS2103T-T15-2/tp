@@ -144,7 +144,7 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS w/WEIGHT g/GENDER
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:** `Gender` should be either M or F (not case-sensitive). </div>
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:** `Routine` is case sensitive. </div>
-
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:** `Weight` is specified in Kg (kilograms). </div>
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 w/50 g/M r/Cardio` (Cardio routine has to exist in exercise routine).
