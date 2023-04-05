@@ -1,6 +1,7 @@
 package seedu.fitbook.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.fitbook.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,6 +11,7 @@ import java.util.Set;
 
 import seedu.fitbook.commons.core.index.Index;
 import seedu.fitbook.commons.util.StringUtil;
+import seedu.fitbook.logic.commands.EditCommand;
 import seedu.fitbook.logic.parser.exceptions.ParseException;
 import seedu.fitbook.model.client.Address;
 import seedu.fitbook.model.client.Appointment;
@@ -41,6 +43,10 @@ public class ParserUtil {
      */
     public static Index parseIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
+        if (!StringUtil.isSignedInteger(trimmedIndex)) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
+        }
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
             throw new ParseException(MESSAGE_INVALID_INDEX);
         }

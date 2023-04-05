@@ -70,4 +70,22 @@ public class StringUtil {
             return false;
         }
     }
+
+    /**
+     * Returns true if {@code s} represents a signed integer
+     * e.g. -3, -2, -1, 0, +1, +2, +3, ..., {@code Integer.MAX_VALUE} <br>
+     */
+    public static boolean isSignedInteger(String s) {
+        boolean isInteger = true;
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isDigit(s.charAt(i))) {
+                if (i == 0 && (s.charAt(i) == '-' || s.charAt(i) == '+')) {
+                    continue;
+                }
+                isInteger = false;
+                break;
+            }
+        }
+        return isInteger;
+    }
 }
